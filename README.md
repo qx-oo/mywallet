@@ -1,13 +1,32 @@
 # mywallet
 
+This is command line eth wallet
+
 ### Command
 
-    create -pass PASSWORD -name NAME --for create new wallet
-    show --for show all wallet
-    delete -pass PASSWROD -name NAME --for delete wallet
-    import -words "xx xx xx ... " --for import wallet by mnemonic
-    balance -pass PASSWROD -name NAME --for query account balance
-    transfer -pass PASSWORD -name NAME -to TOADDR -value VALUE --for transfer from acct to toaddr
+Create new wallet:
+
+    create -pass PASSWORD -name NAME
+
+Show all wallet:
+
+    show
+
+Delete wallet:
+
+    delete -pass PASSWROD -name NAME
+
+Import wallet by mnemonic:
+
+    import -words "xx xx xx ... "
+
+Query account balance:
+
+    balance -pass PASSWROD -name NAME
+
+Transfer:
+
+    transfer -pass PASSWORD -name NAME -to TOADDR -value VALUE
 
 ### Run
 
