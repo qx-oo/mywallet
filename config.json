@@ -1,0 +1,5 @@
+{
+    "eth_url": "http://localhost:8545",
+    "data_dir": "./datadir",
+    "gas_limit": 30000
+}

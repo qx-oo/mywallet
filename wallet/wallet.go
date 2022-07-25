@@ -15,6 +15,7 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
+	"github.com/qxoo/mywallet/config"
 	"github.com/tyler-smith/go-bip39"
 )
 
@@ -184,9 +185,8 @@ func (w *Wallet) Transfer(toaddr string, value float64) error {
 
 	amount := big.NewInt(int64(value * math.Pow10(18)))
 	data := []byte("Transfer")
-	gaslimit := uint64(30000)
 
-	tx := types.NewTransaction(nonce, to_addr, amount, gaslimit, gasprice, data)
+	tx := types.NewTransaction(nonce, to_addr, amount, config.Config.GasLimit, gasprice, data)
 
 	chainid, err := w.Client.NetworkID(context.Background())
 	if err != nil {
