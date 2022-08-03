@@ -1,5 +1,6 @@
 {
     "eth_url": "http://localhost:8545",
     "data_dir": "./datadir",
-    "gas_limit": 30000
+    "gas_limit": 30000,
+    "mytoken_address": "0x85D01b1309d8714E61Cd53981D6AB6a30307A7AA"
 }

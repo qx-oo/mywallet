@@ -218,3 +218,7 @@ func (w Wallet) GetBalance() (float64, error) {
 	val, _ := _balance.Float64()
 	return val, nil
 }
+
+func (w *Wallet) CloseClient() {
+	w.Client.Close()
+}

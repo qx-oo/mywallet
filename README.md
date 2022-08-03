@@ -2,31 +2,41 @@
 
 This is command line eth wallet
 
+### Init
+
+ABI File:
+
+    solc --abi sol/Mytoken.sol -o sol
+
+Sol Bin:
+
+    solc --bin sol/Mytoken.sol -o sol
+
+Go ABI:
+
+    abigen -abi sol/Mytoken.abi -pkg sol -out sol/mytoken.go
+
+Go ABI(Deploy):
+
+    abigen --bin=sol/Mytoken.bin --abi=sol/Mytoken.abi --pkg=sol --out=sol/mytoken.go
+
 ### Command
 
-Create new wallet:
+Command
 
-    create -pass PASSWORD -name NAME
+	create -pass PASSWORD -name NAME --for create new wallet
+	show --for show all wallet
+	delete -pass PASSWROD -name NAME --for delete wallet
+	import -words "xx xx xx ... " --for import wallet by mnemonic
+	balance -pass PASSWROD -name NAME --for query account balance
+	transfer -pass PASSWORD -name NAME -to TOADDR -value VALUE --for transfer from acct to toaddr
 
-Show all wallet:
+Token Command
 
-    show
-
-Delete wallet:
-
-    delete -pass PASSWROD -name NAME
-
-Import wallet by mnemonic:
-
-    import -words "xx xx xx ... "
-
-Query account balance:
-
-    balance -pass PASSWROD -name NAME
-
-Transfer:
-
-    transfer -pass PASSWORD -name NAME -to TOADDR -value VALUE
+	deploytoken -pass PASSWORD -name NAME --for deploy token
+	minttoken -pass PASSWORD -name NAME -to TOADDR -value VALUE --for mint token to toaddr
+	sendtoken -pass PASSWORD -name NAME -to TOADDR -value VALUE --for send mytoken
+	balancetoken -name NAME --for query account balance
 
 ### Run
 

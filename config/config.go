@@ -27,10 +27,11 @@ func init() {
 }
 
 type Configuration struct {
-	EthUrl   string `json:"eth_url"`
-	DataDir  string `json:"data_dir"`
-	GasLimit uint64 `json:"gas_limit"`
-	Root     string
+	EthUrl         string `json:"eth_url"`
+	DataDir        string `json:"data_dir"`
+	GasLimit       uint64 `json:"gas_limit"`
+	MytokenAddress string `json:"mytoken_address"`
+	Root           string
 }
 
 var Config Configuration
